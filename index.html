@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GhostNote AI | Enter the Unknown</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="#">👻 Ghost<span>Note</span></a>
+    <button id="viewSaved">📖 My Storybook <span id="count">0</span></button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">✦ ENTER IF YOU DARE ✦</p>
+      <h1>Some stories refuse<br>to <span>disappear.</span></h1>
+      <p>Give the darkness a thought. Leave with a story you won't forget.</p>
+      <div class="ghost">👻</div>
+    </section>
+
+    <section class="workspace">
+      <div class="panel">
+        <p class="eyebrow">01 / THE SUMMONING</p>
+        <h2>What haunts your mind?</h2>
+
+        <label for="prompt">YOUR STORY IDEA</label>
+        <textarea id="prompt" maxlength="500"
+          placeholder="I heard footsteps in my empty college corridor at midnight..."></textarea>
+        <p class="hint"><span id="characters">0</span>/500 characters</p>
+
+        <label for="genre">CHOOSE YOUR NIGHTMARE</label>
+        <select id="genre">
+          <option value="paranormal">👁️ Paranormal Encounter</option>
+          <option value="haunted">🏚️ Haunted House</option>
+          <option value="psychological">🪞 Psychological Horror</option>
+          <option value="folklore">🌕 Dark Folklore</option>
+          <option value="campus">🏫 Midnight on Campus</option>
+        </select>
+
+        <label>HOW DARK SHOULD IT GET?</label>
+        <div class="levels">
+          <button class="level active" data-level="eerie">🌫️ Eerie</button>
+          <button class="level" data-level="dark">🕯️ Dark</button>
+          <button class="level" data-level="nightmare">💀 Nightmare</button>
+        </div>
+
+        <button id="generate" class="primary">✧ SUMMON MY STORY ↗</button>
+        <p class="privacy">🔒 Your saved stories stay in this browser.</p>
+      </div>
+
+      <div class="panel result">
+        <p class="eyebrow">02 / THE MANIFESTATION</p>
+        <div id="empty" class="empty">
+          <div class="eye">👁️</div>
+          <h2>The page is listening.</h2>
+          <p>Enter a story idea and let the shadows do the rest.</p>
+        </div>
+
+        <article id="story" hidden>
+          <p class="eyebrow">A GHOSTNOTE ORIGINAL</p>
+          <h2 id="title"></h2>
+          <div class="separator">✦ ───────── ✦</div>
+          <div id="storyText"></div>
+
+          <div id="endings" hidden>
+            <p class="eyebrow">CHOOSE YOUR ENDING</p>
+            <button class="choice" data-choice="open">Open the mysterious door ↗</button>
+            <button class="choice" data-choice="run">Run into the darkness ↗</button>
+          </div>
+
+          <div class="actions">
+            <button id="save">♡ Save Story</button>
+            <button id="continue">Choose Ending ↗</button>
+            <button id="copy">Copy Story</button>
+          </div>
+          <p class="hint">Prototype version: stories use JavaScript templates, not a real AI model yet.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="archive" class="panel archive" hidden>
+      <div class="archive-heading">
+        <h2>📖 Your Storybook</h2>
+        <button id="closeArchive">✕ Close</button>
+      </div>
+      <div id="savedStories"></div>
+    </section>
+
+    <footer>GHOSTNOTE ✦ SOME STORIES NEVER DIE</footer>
+  </main>
+  <div id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
